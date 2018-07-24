@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { basename, dirname } from 'path';
-import { promisify } from 'util';
+import promisify from 'pify';
 import mkdirpCb from 'mkdirp';
 import MakePlural from 'make-plural/make-plural';
 
@@ -19,7 +19,7 @@ export default function plurals(output) {
     return output.file.replace('[locale]', id);
   }
 
-  async function writePlurals(id, mp) {
+  function writePlurals(id, mp) {
     const file = getFile(id);
     const fnText = mp.toString();
     let source = output.format === 'es'
@@ -35,25 +35,25 @@ export default function plurals(output) {
       seen.set(fnText, id);
     }
 
-    await mkdirp(dirname(file));
-    await writeFile(file, `${source}\n`);
+    return mkdirp(dirname(file))
+      .then(() => writeFile(file, `${source}\n`));
   }
 
   return {
-    async buildStart() {
+    buildStart() {
       const locales = Object.keys(pluralsData.supplemental['plurals-type-cardinal']);
-      await Promise.all(locales.map(id => (
+      return Promise.all(locales.map(id => (
         writePlurals(id, new MakePlural(id).test())
-      )));
+      ))).then(() => {
+        const index = getFile('index');
+        return writeFile(index, locales.map((id) => {
+          const specifier = `./${basename(getFile(id))}`;
 
-      const index = getFile('index');
-      await writeFile(index, locales.map((id) => {
-        const specifier = `./${basename(getFile(id))}`;
-
-        return output.format === 'es'
-          ? `export { default as ${id.replace('-', '_')} } from '${specifier}';`
-          : `exports.${id.replace('-', '_')} = require('${specifier}');`;
-      }).join('\n'));
+          return output.format === 'es'
+            ? `export { default as ${id.replace('-', '_')} } from '${specifier}';`
+            : `exports.${id.replace('-', '_')} = require('${specifier}');`;
+        }).join('\n'));
+      });
     },
   };
 }
