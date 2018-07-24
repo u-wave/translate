@@ -4,8 +4,8 @@
   "description": "Small JS translations with proper pluralization",
   "license": "MIT",
   "author": "Renée Kooi <renee@kooi.me>",
-  "main": "dist/u-wave-translate.js",
-  "module": "dist/u-wave-translate.mjs",
+  "main": "dist/translate.js",
+  "module": "dist/translate.mjs",
   "jsnext:main": "src/index.js",
   "repository": "u-wave/translate",
   "keywords": [
