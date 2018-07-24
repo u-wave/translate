@@ -4,8 +4,12 @@ Basic key-based translation with pluralization for web apps.
 
 This is intentionally barebones—loading translations, switching languages etc is left to the user.
 
-[Installation](#installation) - [Usage](#usage) - [Supported Markup](#supported-markup) -
-[API](#api) - [License](#license)
+[Installation](#installation) - [Usage](#usage) - [API](#api) - [Related](#related) - [License: MIT](#license)
+
+[![Build Status](https://travis-ci.com/u-wave/translate.svg?branch=master)](https://travis-ci.com/u-wave/translate)
+[![Coverage Status](https://coveralls.io/repos/github/u-wave/translate/badge.svg?branch=master)](https://coveralls.io/github/u-wave/translate?branch=master)
+[![npm](https://img.shields.io/npm/v/@u-wave/translate.svg)](https://npmjs.com/package/@u-wave/translate)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@u-wave/translate.svg)](https://bundlephobia.com/result?p=@u-wave/translate)
 
 ## Installation
 
@@ -115,7 +119,7 @@ Create a translator instance.
 
 **Parameters**
 
- - `lang` - An object mapping key IDs to translated strings. See [Language Format][] for more.
+ - `lang` - An object mapping key IDs to translated strings.
 
    ```js
     new Translator({ login: 'Log in', register: 'Register' });
@@ -159,4 +163,3 @@ result.forEach((part) => {
 [MIT][license]
 
 [license]: ./LICENSE
-[Language Format]: #language-format
