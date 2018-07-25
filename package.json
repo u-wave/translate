@@ -1,6 +1,6 @@
 {
   "name": "@u-wave/translate",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Small JS translations with proper pluralization",
   "license": "MIT",
   "author": "Renée Kooi <renee@kooi.me>",
@@ -14,7 +14,7 @@
   "bugs": "https://github.com/u-wave/translate/issues",
   "homepage": "https://github.com/u-wave/translate#readme",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "build": "rollup -c",
     "test:lint": "eslint .",
     "test:mocha": "cross-env BABEL_ENV=test mocha",
