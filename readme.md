@@ -9,7 +9,7 @@ This is intentionally barebones—loading translations, switching languages etc 
 [![Build Status](https://travis-ci.com/u-wave/translate.svg?branch=master)](https://travis-ci.com/u-wave/translate)
 [![Coverage Status](https://coveralls.io/repos/github/u-wave/translate/badge.svg?branch=master)](https://coveralls.io/github/u-wave/translate?branch=master)
 [![npm](https://img.shields.io/npm/v/@u-wave/translate.svg)](https://npmjs.com/package/@u-wave/translate)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@u-wave/translate.svg)](https://bundlephobia.com/result?p=@u-wave/translate)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@u-wave/translate.svg)](https://bundlephobia.com/result?p=@u-wave/translate) [![Greenkeeper badge](https://badges.greenkeeper.io/u-wave/translate.svg)](https://greenkeeper.io/)
 
 ## Installation
 
