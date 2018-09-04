@@ -133,6 +133,8 @@ Create a translator instance.
 
 Get the translated string for `key` interpolated with the values in the `data` object.
 
+If `key` is an array, the first available key in the list is used.
+
 ### `translator.parts(key, data)`
 
 Get an array containing the literal parts of the translated string for `key`, alternating with the values in the `data` object. This allows using non-string `data` values.

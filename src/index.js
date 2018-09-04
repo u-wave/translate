@@ -14,15 +14,21 @@ function has(o, p) {
 }
 
 export default class Translator {
-  constructor(strings, opts = {}) {
+  constructor(strings, options = {}) {
     this.strings = strings;
     this.t = this.t.bind(this);
 
-    this.plural = opts.plural || defaultPlural;
-    this.default = opts.default;
+    this.plural = options.plural || defaultPlural;
+    this.default = options.default;
   }
 
-  parts(key, data) {
+  parts(key, data, options = {}) {
+    if (Array.isArray(key)) {
+      return first(key, k => this.parts(k, data, {
+        throw: false,
+      }));
+    }
+
     const plural = has(data, 'count') ? this.plural(data.count) : 'one';
     const pluralKeys = [];
     if (plural === 'other') pluralKeys.push(`${key}_plural`);
@@ -33,6 +39,9 @@ export default class Translator {
     if (template === undefined) {
       if (this.default) return this.default.parts(key, data);
 
+      if (options && options.throw === false) {
+        return undefined;
+      }
       throw new Error(`@u-wave/translate: Key "${key}" does not exist.`);
     }
 

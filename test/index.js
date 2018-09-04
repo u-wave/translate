@@ -48,6 +48,10 @@ describe('t', () => {
     expect(translator.t('duck', { count: 2 })).toEqual('2 ducks');
   });
 
+  it('can fall back if specific messages do not exist', () => {
+    expect(translator.t(['nested.abc', 'nested.xyz'])).toEqual('ghi');
+  });
+
   it('throws if translation is not available', () => {
     expect(() => translator.t('doesnotexist')).toThrow(/Key "doesnotexist" does not exist\./);
   });
