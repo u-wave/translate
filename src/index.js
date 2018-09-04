@@ -1,4 +1,4 @@
-import dlv from 'dlv';
+import getPath from 'dlv';
 import defaultPlural from '../plurals/en';
 
 function first(arr, fn) {
@@ -24,12 +24,12 @@ export default class Translator {
 
   parts(key, data) {
     const plural = has(data, 'count') ? this.plural(data.count) : 'one';
-    const keys = [];
-    if (plural === 'other') keys.push(`${key}_plural`);
-    keys.push(`${key}_${plural}`);
-    if (plural === 'one') keys.push(key);
+    const pluralKeys = [];
+    if (plural === 'other') pluralKeys.push(`${key}_plural`);
+    pluralKeys.push(`${key}_${plural}`);
+    if (plural === 'one') pluralKeys.push(key);
 
-    const template = first(keys, k => dlv(this.strings, k));
+    const template = first(pluralKeys, k => getPath(this.strings, k));
     if (template === undefined) {
       if (this.default) return this.default.parts(key, data);
 
@@ -37,7 +37,7 @@ export default class Translator {
     }
 
     return template.split(/\{\{(.*?)\}\}/).map((part, i) => {
-      if (i % 2) return dlv(data, part);
+      if (i % 2) return getPath(data, part);
       return part;
     }, []);
   }
