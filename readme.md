@@ -2,7 +2,7 @@
 
 Basic key-based translation with pluralization for web apps.
 
-This is intentionally barebones—loading translations, switching languages etc is left to the user.
+This is intentionally barebones—loading translations, switching languages etc is left to the user. The best way to handle switching languages depends on where the library is used. For React apps, the current language can be stored in a top-level component's state. In server-side Express apps, the current language can be stored on the Request object.
 
 [Installation](#installation) - [Usage](#usage) - [API](#api) - [Related](#related) - [License: MIT](#license)
 
