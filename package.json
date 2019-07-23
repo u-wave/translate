@@ -1,26 +1,9 @@
 {
   "name": "@u-wave/translate",
-  "version": "1.0.0",
   "description": "Small JS translations with proper pluralization",
-  "license": "MIT",
+  "version": "1.0.0",
   "author": "Renée Kooi <renee@kooi.me>",
-  "main": "dist/translate.js",
-  "module": "dist/translate.mjs",
-  "jsnext:main": "src/index.js",
-  "repository": "u-wave/translate",
-  "keywords": [
-    "u-wave"
-  ],
   "bugs": "https://github.com/u-wave/translate/issues",
-  "homepage": "https://github.com/u-wave/translate#readme",
-  "scripts": {
-    "prepare": "npm run build",
-    "build": "rollup -c",
-    "test:lint": "eslint .",
-    "test:mocha": "cross-env BABEL_ENV=test mocha",
-    "cov": "nyc npm run test:mocha",
-    "test": "npm run cov && npm run test:lint"
-  },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
@@ -41,5 +24,22 @@
     "rollup": "^1.0.0",
     "rollup-plugin-babel": "^4.0.2",
     "rollup-plugin-node-resolve": "^5.0.0"
+  },
+  "homepage": "https://github.com/u-wave/translate#readme",
+  "jsnext:main": "src/index.js",
+  "keywords": [
+    "u-wave"
+  ],
+  "license": "MIT",
+  "main": "dist/translate.js",
+  "module": "dist/translate.mjs",
+  "repository": "u-wave/translate",
+  "scripts": {
+    "build": "rollup -c",
+    "cov": "nyc npm run test:mocha",
+    "prepare": "npm run build",
+    "test": "npm run cov && npm run test:lint",
+    "test:lint": "eslint .",
+    "test:mocha": "cross-env BABEL_ENV=test mocha"
   }
 }
