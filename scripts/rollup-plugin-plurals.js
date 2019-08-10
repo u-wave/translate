@@ -2,12 +2,12 @@ import fs from 'fs';
 import { basename, dirname } from 'path';
 import promisify from 'pify';
 import mkdirpCb from 'mkdirp';
-import MakePlural from 'make-plural/make-plural';
+import PluralCompiler from 'make-plural-compiler';
 
 const pluralsData = require('cldr-core/supplemental/plurals.json');
 const ordinalsData = require('cldr-core/supplemental/ordinals.json');
 
-MakePlural.load(pluralsData, ordinalsData);
+PluralCompiler.load(pluralsData, ordinalsData);
 
 const mkdirp = promisify(mkdirpCb);
 const writeFile = promisify(fs.writeFile);
@@ -43,7 +43,7 @@ export default function plurals(output) {
     buildStart() {
       const locales = Object.keys(pluralsData.supplemental['plurals-type-cardinal']);
       return Promise.all(locales.map((id) => (
-        writePlurals(id, new MakePlural(id).test())
+        writePlurals(id, new PluralCompiler(id).compile())
       ))).then(() => {
         const index = getFile('index');
         return writeFile(index, locales.map((id) => {
