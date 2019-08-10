@@ -24,7 +24,7 @@ export default class Translator {
 
   parts(key, data, options = {}) {
     if (Array.isArray(key)) {
-      return first(key, k => this.parts(k, data, {
+      return first(key, (k) => this.parts(k, data, {
         throw: false,
       }));
     }
@@ -35,7 +35,7 @@ export default class Translator {
     pluralKeys.push(`${key}_${plural}`);
     if (plural === 'one') pluralKeys.push(key);
 
-    const template = first(pluralKeys, k => getPath(this.strings, k));
+    const template = first(pluralKeys, (k) => getPath(this.strings, k));
     if (template === undefined) {
       if (this.default) return this.default.parts(key, data);
 

@@ -42,7 +42,7 @@ export default function plurals(output) {
   return {
     buildStart() {
       const locales = Object.keys(pluralsData.supplemental['plurals-type-cardinal']);
-      return Promise.all(locales.map(id => (
+      return Promise.all(locales.map((id) => (
         writePlurals(id, new MakePlural(id).test())
       ))).then(() => {
         const index = getFile('index');
