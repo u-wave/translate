@@ -23,7 +23,9 @@
     "pify": "^4.0.0",
     "rollup": "^1.19.4",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-node-resolve": "^5.0.0"
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "tsd": "^0.7.4",
+    "typescript": "^3.6.3"
   },
   "homepage": "https://github.com/u-wave/translate#readme",
   "jsnext:main": "src/index.js",
@@ -38,8 +40,10 @@
     "build": "rollup -c",
     "cov": "nyc npm run test:mocha",
     "prepare": "npm run build",
-    "test": "npm run cov && npm run test:lint",
+    "test": "npm run cov && npm run test:lint && npm run test:type",
     "test:lint": "eslint .",
-    "test:mocha": "cross-env BABEL_ENV=test mocha"
-  }
+    "test:mocha": "cross-env BABEL_ENV=test mocha",
+    "test:type": "tsd"
+  },
+  "types": "index.d.ts"
 }
