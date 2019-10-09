@@ -9,7 +9,7 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/register": "^7.5.5",
     "babel-plugin-istanbul": "^5.2.0",
-    "cldr-core": "^35.1.0",
+    "cldr-core": "^36.0.0",
     "cross-env": "^6.0.0",
     "dlv": "^1.1.2",
     "eslint": "^6.0.0",
