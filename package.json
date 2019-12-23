@@ -19,7 +19,7 @@
     "make-plural-compiler": "^5.0.0",
     "mkdirp": "^0.5.1",
     "mocha": "^6.2.0",
-    "nyc": "^14.0.0",
+    "nyc": "^15.0.0",
     "pify": "^4.0.0",
     "rollup": "^1.19.4",
     "rollup-plugin-babel": "^4.3.3",
