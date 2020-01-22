@@ -16,7 +16,7 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",
-    "expect": "^24.9.0",
+    "expect": "^25.1.0",
     "make-plural-compiler": "^5.0.0",
     "mkdirp": "^0.5.1",
     "mocha": "^7.0.0",
