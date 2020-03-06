@@ -5,9 +5,9 @@
   "author": "Renée Kooi <renee@kooi.me>",
   "bugs": "https://github.com/u-wave/translate/issues",
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/register": "^7.8.3",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/register": "^7.8.6",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "babel-plugin-istanbul": "^6.0.0",
     "cldr-core": "^36.0.0",
