@@ -41,5 +41,6 @@
     "test": "npm run cov && npm run test:lint",
     "test:lint": "eslint .",
     "test:mocha": "cross-env BABEL_ENV=test mocha"
-  }
+  },
+  "sideEffects": false
 }
