@@ -19,7 +19,7 @@
     "expect": "^25.1.0",
     "make-plural-compiler": "^5.1.0",
     "mkdirp": "^1.0.3",
-    "mocha": "^7.1.0",
+    "mocha": "^8.0.1",
     "nyc": "^15.0.0",
     "pify": "^5.0.0",
     "rollup": "^2.0.6",
