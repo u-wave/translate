@@ -37,7 +37,7 @@ export default class Translator {
 
     const template = first(pluralKeys, (k) => getPath(this.strings, k));
     if (template === undefined) {
-      if (this.default) return this.default.parts(key, data);
+      if (this.default) return this.default.parts(key, data, options);
 
       if (options && options.throw === false) {
         return undefined;
