@@ -35,12 +35,10 @@
   "module": "dist/translate.mjs",
   "repository": "u-wave/translate",
   "scripts": {
-    "build": "rollup -c",
-    "cov": "nyc npm run test:mocha",
-    "prepare": "npm run build",
-    "test": "npm run cov && npm run test:lint",
-    "test:lint": "eslint .",
-    "test:mocha": "cross-env BABEL_ENV=test mocha --require @babel/register"
+    "prepare": "rollup -c",
+    "lint": "eslint .",
+    "test": "npm run tests-only && npm run lint",
+    "tests-only": "nyc mocha --require @babel/register"
   },
   "sideEffects": false
 }
