@@ -1,4 +1,3 @@
-import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import plurals from './scripts/rollup-plugin-plurals';
 
@@ -11,7 +10,6 @@ export default {
     { format: 'esm', file: pkg.module },
   ],
   plugins: [
-    babel({ babelHelpers: 'bundled' }),
     resolve(),
     plurals({
       file: './plurals/[locale].js',
