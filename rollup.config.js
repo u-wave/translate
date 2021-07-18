@@ -1,17 +1,15 @@
-import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import plurals from './scripts/rollup-plugin-plurals';
 
 const pkg = require('./package.json');
 
 export default {
-  input: './src/index.js',
+  input: './src/index.mjs',
   output: [
     { format: 'cjs', file: pkg.main, exports: 'named' },
-    { format: 'es', file: pkg.module },
+    { format: 'esm', file: pkg.module },
   ],
   plugins: [
-    babel(),
     resolve(),
     plurals({
       file: './plurals/[locale].js',

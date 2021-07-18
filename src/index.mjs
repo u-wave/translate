@@ -1,5 +1,5 @@
 import getPath from 'dlv';
-import defaultPlural from '../plurals/en';
+import defaultPlural from '../plurals/en.mjs';
 
 function first(arr, fn) {
   for (let i = 0; i < arr.length; i += 1) {
