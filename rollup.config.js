@@ -8,10 +8,10 @@ export default {
   input: './src/index.js',
   output: [
     { format: 'cjs', file: pkg.main, exports: 'named' },
-    { format: 'es', file: pkg.module },
+    { format: 'esm', file: pkg.module },
   ],
   plugins: [
-    babel(),
+    babel({ babelHelpers: 'bundled' }),
     resolve(),
     plurals({
       file: './plurals/[locale].js',

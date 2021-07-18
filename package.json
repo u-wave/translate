@@ -22,7 +22,6 @@
     "mkdirp": "^1.0.4",
     "mocha": "^9.0.0",
     "nyc": "^15.1.0",
-    "pify": "^5.0.0",
     "rollup": "^2.26.5",
     "tsd": "^0.17.0",
     "typescript": "^4.3.5"
@@ -33,8 +32,18 @@
     "u-wave"
   ],
   "license": "MIT",
-  "main": "dist/translate.js",
-  "module": "dist/translate.mjs",
+  "main": "./dist/translate.js",
+  "module": "./dist/translate.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/translate.js",
+      "default": "./dist/translate.mjs"
+    },
+    "./plurals/*": {
+      "require": "./plurals/*.js",
+      "default": "./plurals/*.mjs"
+    }
+  },
   "repository": "u-wave/translate",
   "scripts": {
     "prepare": "rollup -c",
