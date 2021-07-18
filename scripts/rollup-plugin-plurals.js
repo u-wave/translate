@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import fs from 'fs';
 import { basename, dirname } from 'path';
 import mkdirp from 'mkdirp';
 import PluralCompiler from 'make-plural-compiler';
@@ -32,7 +32,7 @@ export default function plurals(output) {
     }
 
     await mkdirp(dirname(file));
-    await fs.writeFile(file, `${source}\n`);
+    await fs.promises.writeFile(file, `${source}\n`);
   }
 
   return {
@@ -43,7 +43,7 @@ export default function plurals(output) {
       )));
 
       const index = getFile('index');
-      await fs.writeFile(index, locales.map((id) => {
+      await fs.promises.writeFile(index, locales.map((id) => {
         const specifier = `./${basename(getFile(id))}`;
 
         return output.format === 'es'
