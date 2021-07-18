@@ -1,15 +1,14 @@
 module.exports = (api) => {
-  const env = process.env.BABEL_ENV || process.env.NODE_ENV || 'development';
-  api.cache(() => env);
+  const isTesting = api.caller((caller) => caller.name === '@babel/register');
 
   return {
     presets: [
       ['@babel/preset-env', {
-        modules: env === 'test' ? 'commonjs' : false,
+        modules: isTesting ? 'commonjs' : false,
         loose: true,
-        targets: env === 'test' ? { node: 'current' } : null,
+        targets: isTesting ? { node: 'current' } : null,
       }],
     ],
-    plugins: env === 'test' ? ['istanbul'] : [],
+    plugins: isTesting ? ['istanbul'] : [],
   };
 };

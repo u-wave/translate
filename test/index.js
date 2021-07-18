@@ -124,4 +124,8 @@ describe('fallback', () => {
     expect(translator.t('defaultDuck', { count: 1 })).toEqual('1 duck');
     expect(translator.t('defaultDuck', { count: 2 })).toEqual('2 ducks');
   });
+
+  it('can fall back if specific messages do not exist', () => {
+    expect(translator.t(['specialDuck', 'duck', 'defaultDuck'], { count: 2 })).toEqual('2 (few) ducks');
+  });
 });

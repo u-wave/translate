@@ -1,5 +1,5 @@
-import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
+import babel from '@rollup/plugin-babel';
+import resolve from '@rollup/plugin-node-resolve';
 import plurals from './scripts/rollup-plugin-plurals';
 
 const pkg = require('./package.json');
@@ -12,9 +12,7 @@ export default {
   ],
   plugins: [
     babel(),
-    resolve({
-      extensions: ['.mjs', '.js'],
-    }),
+    resolve(),
     plurals({
       file: './plurals/[locale].js',
       format: 'cjs',
