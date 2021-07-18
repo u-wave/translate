@@ -1,6 +1,5 @@
 import fs from 'fs';
 import { basename, dirname } from 'path';
-import mkdirp from 'mkdirp';
 import PluralCompiler from 'make-plural-compiler';
 
 const pluralsData = require('cldr-core/supplemental/plurals.json');
@@ -31,7 +30,7 @@ export default function plurals(output) {
       seen.set(fnText, id);
     }
 
-    await mkdirp(dirname(file));
+    await fs.promises.mkdir(dirname(file), { recursive: true });
     await fs.promises.writeFile(file, `${source}\n`);
   }
 
