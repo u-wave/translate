@@ -46,7 +46,7 @@
     "prepare": "rollup -c",
     "lint": "eslint .",
     "test": "npm run tests-only && npm run lint",
-    "tests-only": "c8 --include src --all mocha",
+    "tests-only": "c8 --include src --all --reporter lcov mocha",
     "types": "tsd"
   },
   "types": "index.d.ts",
