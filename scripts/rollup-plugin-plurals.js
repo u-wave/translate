@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { basename, dirname } from 'path';
-import PluralCompiler from 'make-plural-compiler';
+import { Compiler as PluralCompiler } from 'make-plural-compiler';
 
 const pluralsData = require('cldr-core/supplemental/plurals.json');
 const ordinalsData = require('cldr-core/supplemental/ordinals.json');
