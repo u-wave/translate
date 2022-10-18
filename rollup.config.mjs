@@ -1,7 +1,8 @@
+import fs from 'fs';
 import resolve from '@rollup/plugin-node-resolve';
-import plurals from './scripts/rollup-plugin-plurals';
+import plurals from './scripts/rollup-plugin-plurals.mjs';
 
-const pkg = require('./package.json');
+const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 export default {
   input: './src/index.mjs',
