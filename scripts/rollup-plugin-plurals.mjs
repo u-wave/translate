@@ -1,9 +1,9 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import { basename, dirname } from 'path';
 import { Compiler as PluralCompiler } from 'make-plural-compiler';
 
-const pluralsData = require('cldr-core/supplemental/plurals.json');
-const ordinalsData = require('cldr-core/supplemental/ordinals.json');
+const pluralsData = JSON.parse(await fs.readFile('./node_modules/cldr-core/supplemental/plurals.json', 'utf8'));
+const ordinalsData = JSON.parse(await fs.readFile('./node_modules/cldr-core/supplemental/ordinals.json', 'utf8'));
 
 PluralCompiler.load(pluralsData, ordinalsData);
 
@@ -30,8 +30,8 @@ export default function plurals(output) {
       seen.set(fnText, id);
     }
 
-    await fs.promises.mkdir(dirname(file), { recursive: true });
-    await fs.promises.writeFile(file, `${source}\n`);
+    await fs.mkdir(dirname(file), { recursive: true });
+    await fs.writeFile(file, `${source}\n`);
   }
 
   return {
@@ -42,7 +42,7 @@ export default function plurals(output) {
       )));
 
       const index = getFile('index');
-      await fs.promises.writeFile(index, locales.map((id) => {
+      await fs.writeFile(index, locales.map((id) => {
         const specifier = `./${basename(getFile(id))}`;
 
         return output.format === 'es'

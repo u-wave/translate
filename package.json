@@ -15,7 +15,7 @@
     "expect": "^29.0.1",
     "make-plural-compiler": "^6.0.0",
     "mocha": "^10.0.0",
-    "rollup": "^2.26.5",
+    "rollup": "^3.2.2",
     "tsd": "^0.24.1",
     "typescript": "^4.3.5"
   },
@@ -40,7 +40,7 @@
   "repository": "u-wave/translate",
   "scripts": {
     "prepare": "rollup -c",
-    "lint": "eslint .",
+    "lint": "eslint --ext mjs .",
     "test": "npm run tests-only && npm run lint",
     "tests-only": "c8 --include src --all --reporter lcov mocha",
     "types": "tsd"
