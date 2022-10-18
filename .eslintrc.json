@@ -1,6 +1,10 @@
 {
   "extends": "airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": 2022
+  },
   "rules": {
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/extensions": ["error", { "mjs": "always" }]
   }
 }

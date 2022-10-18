@@ -40,7 +40,7 @@
   "repository": "u-wave/translate",
   "scripts": {
     "prepare": "rollup -c",
-    "lint": "eslint .",
+    "lint": "eslint --ext mjs .",
     "test": "npm run tests-only && npm run lint",
     "tests-only": "c8 --include src --all --reporter lcov mocha",
     "types": "tsd"
