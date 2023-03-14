@@ -6,18 +6,17 @@
   "bugs": "https://github.com/u-wave/translate/issues",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.0",
-    "c8": "^7.7.3",
+    "@vitest/coverage-c8": "^0.29.2",
     "cldr-core": "^42.0.0",
     "dlv": "^1.1.3",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.22.0",
-    "expect": "^29.0.1",
     "make-plural-compiler": "^6.0.0",
-    "mocha": "^10.0.0",
     "rollup": "^3.2.2",
     "tsd": "^0.27.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "vitest": "^0.29.2"
   },
   "homepage": "https://github.com/u-wave/translate#readme",
   "jsnext:main": "src/index.js",
@@ -42,7 +41,7 @@
     "prepare": "rollup -c",
     "lint": "eslint --ext mjs .",
     "test": "npm run tests-only && npm run lint",
-    "tests-only": "c8 --include src --all --reporter lcov mocha",
+    "tests-only": "vitest run --coverage.enabled --coverage.reporter=lcov --coverage.reporter=text",
     "types": "tsd"
   },
   "types": "index.d.ts",

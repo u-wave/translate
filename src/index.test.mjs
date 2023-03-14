@@ -1,6 +1,10 @@
-/* eslint-env mocha */
-import { expect } from 'expect';
-import Translator from '../src/index.mjs';
+import {
+  expect,
+  describe,
+  it,
+  beforeEach,
+} from 'vitest';
+import Translator from './index.mjs';
 
 /* eslint-disable */
 function pluralizeRussian(n) {
