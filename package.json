@@ -14,7 +14,7 @@
     "eslint-plugin-import": "^2.22.0",
     "make-plural-compiler": "^6.0.0",
     "rollup": "^3.2.2",
-    "tsd": "^0.28.0",
+    "tsd": "^0.29.0",
     "typescript": "^5.0.2",
     "vitest": "^0.34.6"
   },
