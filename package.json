@@ -41,7 +41,7 @@
     "prepare": "rollup -c",
     "lint": "eslint --ext mjs .",
     "test": "npm run tests-only && npm run lint",
-    "tests-only": "vitest run --coverage.enabled --coverage.reporter=lcov --coverage.reporter=text",
+    "tests-only": "vitest run --coverage.enabled --coverage.reporter=lcov --coverage.reporter=text --coverage.include='src/**'",
     "types": "tsd"
   },
   "types": "index.d.ts",
