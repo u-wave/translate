@@ -15,7 +15,7 @@
     "make-plural-compiler": "^6.0.0",
     "rollup": "^4.9.1",
     "tsd": "^0.31.0",
-    "typescript": "^5.0.2",
+    "typescript": "^7.0.2",
     "vitest": "^2.0.1"
   },
   "homepage": "https://github.com/u-wave/translate#readme",
