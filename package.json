@@ -5,7 +5,7 @@
   "author": "Renée Kooi <renee@kooi.me>",
   "bugs": "https://github.com/u-wave/translate/issues",
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
     "@vitest/coverage-v8": "^2.0.1",
     "cldr-core": "^45.0.0",
     "dlv": "^1.1.3",
